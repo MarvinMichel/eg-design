@@ -1,0 +1,16 @@
+:root {
+  // Grey
+  --cl-grey-100: #f4f4f4;
+  --cl-grey-200: #b7b7b7;
+  --cl-grey-300: #525252;
+  --cl-grey-400: #2d302f;
+
+  // 60-30-10
+  --cl-primary: var(--cl-grey-400);
+  --cl-secondary: var(--cl-grey-200);
+  --cl-tertiary: var(--cl-grey-100);
+  &[data-theme='dark'] {
+    --cl-primary: var(--cl-grey-100);
+    --cl-tertiary: var(--cl-grey-400);
+  }
+}
