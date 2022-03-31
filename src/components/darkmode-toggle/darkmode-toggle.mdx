@@ -1,0 +1,68 @@
+import { Canvas, Description, Props, Story } from '@storybook/addon-docs';
+import * as stories from './darkmode-toggle.stories.ts';
+
+# Darkmode Toggle
+
+<Description>A switch button which chages the darkmode state of the HTML document.</Description>
+
+<Canvas withToolbar>
+  <Story id="darkmode-toggle--basic" inline={false} />
+</Canvas>
+
+## How it works
+
+By adding a `data-darkmode` attribute onto the `<html>`, setting it to `light` or `dark`, the application can change it's theme. It uses a media-query to get the users' system default and uses it on render. If the user has changed the theme, it's saved to the localStorage. The latter get priority above everything.
+
+> ⚠️ To get the style changes working you'll need to implement a darkmode theme version inside of your global stylesheet:
+
+```css
+/* global.css  */
+
+:root {
+  --clr-text: black;
+  --clr-background: white;
+}
+:root[data-theme='dark'] {
+  --clr-text: white;
+  --clr-background: black;
+}
+```
+
+## Customization
+Pretty much anything is customizable to make the component suitable for any kind of project.
+
+### Icons
+
+To get a wider browser support, the icons that the button uses are HTML unicodes. They are fully customizable though! By simply adding any element as a child it can serve as an icon if it has the correct slot names. With the `iconIdle` and `iconActive` you can use your own icon of choice:
+
+<Canvas>
+  <Story id="darkmode-toggle--with-icon" inline={false} />
+</Canvas>
+
+### Styling
+
+The toggle has some styling out-of-the-box, but is suppose to act as a white-label component. This means the styling is fully customizable to match the needs of the developer/designer. By using any stylesheet language (CSS/SCSS/LESS) you can change the toggle buttons looks:
+
+
+```css
+eg-darkmode-toggle {
+  background-color: goldenrod;
+}
+
+eg-darkmode-toggle[active='true'] {
+  background-color: blue;
+  color: blue;
+}
+
+eg-darkmode-toggle::part(toggle) {
+  background-color: lemonchiffon;
+}
+
+eg-darkmode-toggle[active='true']::part(toggle) {
+  background-color: aliceblue;
+}
+```
+
+<Story id="darkmode-toggle--customized" name="custom" inline={false}>
+  {stories.basic({ label: 'darkmode' })}
+</Story>

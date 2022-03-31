@@ -7,8 +7,14 @@
 
     <script type="module" src="/build/eg-design.esm.js"></script>
     <script nomodule src="/build/eg-design.js"></script>
+
+    <style>
+      eg-darkmode-toggle[aria-checked='true'] {
+        background-color: red;
+      }
+    </style>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <eg-darkmode-toggle />
   </body>
 </html>

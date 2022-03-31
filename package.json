@@ -24,7 +24,8 @@
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "storybook": "stencil build --watch & start-storybook -p 6006",
+    "storybook": "stencil build --docs --watch & start-storybook -p 6006",
+    "storybook-docs": "start-storybook --docs --no-manager-cache",
     "build-storybook": "build-storybook"
   },
   "dependencies": {

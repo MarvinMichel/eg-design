@@ -5,6 +5,7 @@
   background-color: #b7b7b7;
   border-radius: calc(var(--size, 2.5rem) / 2);
   box-shadow: 0.25em 0.25em 0.5em #2d302f20;
+  color: #525252;
   display: inline-block;
   height: var(--size, 2.5rem);
   padding: 0.125em;
@@ -23,6 +24,7 @@ button[role='switch'] {
   -webkit-appearance: none;
   background-color: transparent;
   border: 0;
+  color: inherit;
   cursor: pointer;
   display: flex;
   font: inherit;
@@ -33,7 +35,7 @@ button[role='switch'] {
   span#toggle {
     background-color: #f4f4f4;
     border-radius: 50%;
-    color: #525252;
+    color: inherit;
     display: grid;
     font-size: 1.25em;
     height: 100%;
