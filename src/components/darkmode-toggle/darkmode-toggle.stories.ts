@@ -32,7 +32,7 @@ customized.decorators = [
       background-color: goldenrod;
     }
 
-    eg-darkmode-toggle[aria-checked='true'] {
+    eg-darkmode-toggle[active] {
       background-color: blue;
       color: blue;
     }
@@ -41,7 +41,7 @@ customized.decorators = [
       background-color: lemonchiffon;
     }
 
-    eg-darkmode-toggle[aria-checked='true']::part(toggle) {
+    eg-darkmode-toggle[active]::part(toggle) {
       background-color: aliceblue;
     }
   </style>

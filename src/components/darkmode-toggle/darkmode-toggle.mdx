@@ -49,7 +49,7 @@ eg-darkmode-toggle {
   background-color: goldenrod;
 }
 
-eg-darkmode-toggle[active='true'] {
+eg-darkmode-toggle[active] {
   background-color: blue;
   color: blue;
 }
@@ -58,11 +58,9 @@ eg-darkmode-toggle::part(toggle) {
   background-color: lemonchiffon;
 }
 
-eg-darkmode-toggle[active='true']::part(toggle) {
+eg-darkmode-toggle[active]::part(toggle) {
   background-color: aliceblue;
 }
 ```
 
-<Story id="darkmode-toggle--customized" name="custom" inline={false}>
-  {stories.basic({ label: 'darkmode' })}
-</Story>
+<Story id="darkmode-toggle--customized" name="custom" inline={false} />

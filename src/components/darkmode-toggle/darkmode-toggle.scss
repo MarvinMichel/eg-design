@@ -14,7 +14,7 @@
   width: calc(var(--size, 2.5rem) * 2);
 }
 
-:host([aria-checked='true']) {
+:host([active]) {
   background-color: #28d654;
 }
 

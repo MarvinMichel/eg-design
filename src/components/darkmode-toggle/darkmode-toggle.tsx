@@ -1,4 +1,4 @@
-import { Component, Prop, h, State, Listen, Host } from '@stencil/core';
+import { Component, Prop, h, State, Listen, Host, Watch } from '@stencil/core';
 
 @Component({
   tag: 'eg-darkmode-toggle',
@@ -6,16 +6,25 @@ import { Component, Prop, h, State, Listen, Host } from '@stencil/core';
   shadow: true,
 })
 export class DarkmodeToggle {
-  @State()
+
+  @Prop({ mutable: true, reflect: true })
   active: boolean;
 
   @Prop()
   label: string = 'Darkmode theme';
 
+  @State()
+  activated: boolean;
+
+  @Watch('activated')
+  watchStateHandler(newValue: boolean) {
+    this.active = newValue;
+  }
+
   @Listen('click')
   toggleTheme() {
-    this.active = !this.active;
-    document.documentElement.setAttribute('data-theme', this.active ? 'dark' : 'light');
+    this.activated = !this.activated;
+    document.documentElement.setAttribute('data-theme', this.activated ? 'dark' : 'light');
   }
 
   componentWillLoad() {
@@ -24,7 +33,7 @@ export class DarkmodeToggle {
 
   render() {
     return (
-      <Host aria-checked={`${this.active}`}>
+      <Host active={`${this.active}`}>
         <button role="switch" aria-labelledby="toggleLabel" aria-checked={`${this.active}`}>
           <span class="sr-label" id="toggleLabel">
             {this.label}

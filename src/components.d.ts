@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface EgDarkmodeToggle {
+        "active": boolean;
         "label": string;
     }
     interface MyComponent {
@@ -44,6 +45,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface EgDarkmodeToggle {
+        "active"?: boolean;
         "label"?: string;
     }
     interface MyComponent {
