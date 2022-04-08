@@ -6,7 +6,6 @@ import { Component, Prop, h, State, Listen, Host, Watch } from '@stencil/core';
   shadow: true,
 })
 export class DarkmodeToggle {
-
   @Prop({ mutable: true, reflect: true })
   active: boolean;
 
@@ -39,12 +38,15 @@ export class DarkmodeToggle {
             {this.label}
           </span>
           <span id="toggle" part="toggle" aria-hidden="true">
-            <div hidden={this.active}>
-              <slot name="iconIdle">{'\u263C'}</slot>
-            </div>
-            <div hidden={!this.active}>
-              <slot name="iconActive">{'\u263D'}</slot>
-            </div>
+            {!this.activated ? (
+              <slot key="a" name="iconIdle">
+                <img src="/images/sun.svg" alt="" role="icon" />
+              </slot>
+            ) : (
+              <slot key="b" name="iconActive">
+                <img src="/images/moon.svg" alt="" role="icon" />
+              </slot>
+            )}
           </span>
         </button>
       </Host>

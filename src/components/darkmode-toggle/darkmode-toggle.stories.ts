@@ -29,20 +29,11 @@ customized.decorators = [
   story => `
   <style>
     eg-darkmode-toggle {
-      background-color: goldenrod;
+      background: #0e141a;
     }
 
     eg-darkmode-toggle[active] {
-      background-color: blue;
-      color: blue;
-    }
-
-    eg-darkmode-toggle::part(toggle) {
-      background-color: lemonchiffon;
-    }
-
-    eg-darkmode-toggle[active]::part(toggle) {
-      background-color: aliceblue;
+      background: #28d654;
     }
   </style>
   ${story()}

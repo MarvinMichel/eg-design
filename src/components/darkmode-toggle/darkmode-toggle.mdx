@@ -29,6 +29,7 @@ By adding a `data-darkmode` attribute onto the `<html>`, setting it to `light` o
 ```
 
 ## Customization
+
 Pretty much anything is customizable to make the component suitable for any kind of project.
 
 ### Icons
@@ -43,23 +44,13 @@ To get a wider browser support, the icons that the button uses are HTML unicodes
 
 The toggle has some styling out-of-the-box, but is suppose to act as a white-label component. This means the styling is fully customizable to match the needs of the developer/designer. By using any stylesheet language (CSS/SCSS/LESS) you can change the toggle buttons looks:
 
-
 ```css
 eg-darkmode-toggle {
-  background-color: goldenrod;
+  background: #0e141a;
 }
 
 eg-darkmode-toggle[active] {
-  background-color: blue;
-  color: blue;
-}
-
-eg-darkmode-toggle::part(toggle) {
-  background-color: lemonchiffon;
-}
-
-eg-darkmode-toggle[active]::part(toggle) {
-  background-color: aliceblue;
+  background: #28d654;
 }
 ```
 
