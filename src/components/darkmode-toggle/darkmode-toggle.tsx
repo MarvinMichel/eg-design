@@ -20,14 +20,15 @@ export class DarkmodeToggle {
   @Listen('click')
   toggleActive() {
     this.active = !this.active;
+    localStorage.setItem('darkmode', JSON.stringify(this.active));
   }
 
   componentWillLoad() {
-    const savedTheme = JSON.parse(localStorage.getItem('darkmode'));
+    const savedTheme = localStorage.getItem('darkmode');
     const prefersDarkmode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     if (savedTheme) {
-      this.active = savedTheme;
+      this.active = JSON.parse(savedTheme);
       return;
     }
 
