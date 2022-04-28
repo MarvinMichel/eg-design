@@ -8,7 +8,7 @@
   }
   --clr-shadow: #0e141a30;
   background: var(--clr-idle, #b7b7b7);
-  border-radius: calc(var(--size, 2rem) / 2);
+  border-radius: calc(var(--size, 2rem) / 1.5);
   box-shadow: 0.125em 0.125em 0.5em var(--clr-shadow);
   color: var(--clr-icon, #525252);
   display: inline-block;
@@ -50,7 +50,7 @@ button[role='switch'] {
     transition: transform var(--transition);
     width: 50%;
 
-    img {
+    svg {
       height: 100%;
       width: 100%;
     }
