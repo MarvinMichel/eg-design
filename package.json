@@ -35,6 +35,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
+    "@geometricpanda/storybook-addon-badges": "^0.2.1",
+    "@ljcl/storybook-addon-cssprops": "^1.0.1",
     "@storybook/addon-a11y": "^6.4.21",
     "@storybook/addon-actions": "^6.4.21",
     "@storybook/addon-docs": "^6.4.21",

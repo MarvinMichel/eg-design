@@ -13,7 +13,7 @@ export class DarkmodeToggle {
   active: boolean;
 
   @Watch('active')
-  watchStateHandler(newValue: boolean) {
+  setHTMLDataTheme(newValue: boolean) {
     document.documentElement.setAttribute('data-theme', newValue ? 'dark' : 'light');
   }
 
@@ -37,7 +37,7 @@ export class DarkmodeToggle {
 
   render() {
     return (
-      <Host active={`${this.active}`}>
+      <Host>
         <button role="switch" aria-labelledby="toggleLabel" aria-checked={`${this.active}`}>
           <span class="sr-label" id="toggleLabel">
             {this.label}
