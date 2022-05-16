@@ -38,9 +38,9 @@ export class DarkmodeToggle {
   render() {
     return (
       <Host>
-        <button role="switch" aria-labelledby="toggleLabel" aria-checked={`${this.active}`}>
+        <button aria-labelledby="toggleLabel" aria-checked={`${this.active}`}>
           <span class="sr-label" id="toggleLabel">
-            {this.label}
+            {this.label}, {this.active ? 'on' : 'off'}
           </span>
           <span id="toggle" part="toggle" aria-hidden="true">
             {!this.active ? (

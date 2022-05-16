@@ -15,7 +15,7 @@ export default {
   description:
     "The darkmode toggle is a switch button which chages the darkmode state of the HTML document, by adding a `data-darkmode` attribute onto the `<html>`. It uses a media-query to get the users' system default and uses it on render. If the user has changed the theme, it's saved to the localStorage. The latter get priority above everything.",
   parameters: {
-    badges: ['development'],
+    badges: ['testing'],
     cssprops: {
       'clr-idle': {
         value: '#b7b7b7',
@@ -41,32 +41,8 @@ export default {
     },
     docs: { page: MDXDocs },
   },
-  title: 'Darkmode Toggle',
+  title: 'Components/Darkmode Toggle',
 };
 
 const DefaultTemplate = args => `<eg-darkmode-toggle label="${args.label}" />`;
 export const basic = DefaultTemplate.bind({});
-
-export const customized = DefaultTemplate.bind({});
-customized.decorators = [
-  story => `
-  <style>
-    eg-darkmode-toggle {
-      background: #0e141a;
-    }
-
-    eg-darkmode-toggle[active] {
-      background: #28d654;
-    }
-  </style>
-  ${story()}
-`,
-];
-
-const IconTemplate = args => `
-  <eg-darkmode-toggle label="${args.label}">
-    <img slot="iconIdle" src="/images/theme-icon-light.svg" />
-    <img slot="iconActive" src="/images/theme-icon-dark.svg" />
-  </eg-darkmode-toggle>
-`;
-export const withIcon = IconTemplate.bind({});

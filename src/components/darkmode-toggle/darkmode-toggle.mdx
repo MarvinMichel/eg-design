@@ -2,15 +2,12 @@ import { Canvas, Description, Props, Story } from '@storybook/addon-docs';
 import * as stories from './darkmode-toggle.stories.ts';
 
 # Darkmode Toggle
-
 <Description>A switch button which chages the darkmode state of the HTML document.</Description>
-
 <Canvas withToolbar>
-  <Story id="darkmode-toggle--basic" inline={false} />
+  <Story id="components-darkmode-toggle--basic" inline={false} />
 </Canvas>
 
 ## How it works
-
 By adding a `data-darkmode` attribute onto the `<html>`, setting it to `light` or `dark`, the application can change it's theme. It uses a media-query to get the users' system default and uses it on render. If the user has changed the theme, it's saved to the localStorage. The latter get priority above everything.
 
 > ⚠️ To get the style changes working you'll need to implement a darkmode theme version inside of your global stylesheet:
@@ -28,22 +25,30 @@ By adding a `data-darkmode` attribute onto the `<html>`, setting it to `light` o
 }
 ```
 
-## Customization
+### Accessibility
+The foremost reason why this component is accessible, is because we use HTML5 native elements to build it, which come with semantic values out-of-the-box. In combination with the right atttributes we can give the screen reader user a better understanding of this component.
 
+#### State
+The most important thing of a toggle button, is comunicating the on/off state to the user. Normally people tend to create toggles or switch buttons with checkboxes or radio buttons. This isn't necessarily wrong, but it leaves screen reader users with questions around the functionality of the toggle which can confuse the user. Screen reader users may associate checkboxes with a handling of. A darkmode toggle in this case, doesn't have anything to do with handling data or forms. It's just an interactive button that changes the state of the app. Kind of like a setting or a menu button. That's why the most appropriate HTML element is the `<button>`, since it handles the semantics out-of-the-box for us.
+
+But we still haven't communicated the on/off state of the button to the user. We could simply use the `role=switch` attribute in combination with `aria-checked`. Most screen readers will inform the user in this case that this button is a switch with an on or off state. Though it's not consistent troughout different screen readers. Besides, screen reader users tend to navigate trough elements since they lack a complete vision of layout. They use shortcuts to navigate trough different UI elements. But on the time of writing, JAWS2022 recognizes elements with `role=switch` as checkboxes instead of buttons. This may confuse the user, as they search for a button but never find it trough the corresponding shortcut.
+
+That's why we simply use a native button with an auxiliary label. The label simply calls the state on or off, based on the components `active` state. Using this method we allow the component to communicate the state to the user without confusing them of the functionality as well as preserving the screen reader shortcuts that they expect to come with the component.
+
+#### Label
+With an instructive label, we can communicate with the user what the call-to-action will be. Normally we would use a verb for this, since it is something the button does. But in our case of the darkmode toggle, we want to turn someting on or off. So the label in this case must refer to the setting we're toggling: the darkmode theme. That's why the label of the component has a default value of `darkmode theme`. The label is placed inside a `<span>` and functions as a label trough the `labbeledby={id}` of the component. This is done, so that we can hide the text visually without hiding other child elements like the icons. Using `labbeldby` is a better way than using `label`, since we can translate the `<span>` element to support multiple languages in the app and thus we make it more inclusive.
+
+## Customization
 Pretty much anything is customizable to make the component suitable for any kind of project.
 
 ### Icons
-
 To get a wider browser support, the icons that the button uses are HTML unicodes. They are fully customizable though! By simply adding any element as a child it can serve as an icon if it has the correct slot names. With the `iconIdle` and `iconActive` you can use your own icon of choice:
-
 <Canvas>
-  <Story id="darkmode-toggle--with-icon" inline={false} />
+  <Story id="hidden-darkmode-toggle--with-icon" inline={false} />
 </Canvas>
 
 ### Styling
-
 The toggle has some styling out-of-the-box, but is suppose to act as a white-label component. This means the styling is fully customizable to match the needs of the developer/designer. By using any stylesheet language (CSS/SCSS/LESS) you can change the toggle buttons looks:
-
 ```css
 eg-darkmode-toggle {
   background: #0e141a;
@@ -53,5 +58,4 @@ eg-darkmode-toggle[active] {
   background: #28d654;
 }
 ```
-
-<Story id="darkmode-toggle--customized" name="custom" inline={false} />
+<Story id="hidden-darkmode-toggle--customized" name="custom" inline={false} />
