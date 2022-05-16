@@ -37,12 +37,14 @@
     "@babel/core": "^7.17.8",
     "@geometricpanda/storybook-addon-badges": "^0.2.1",
     "@ljcl/storybook-addon-cssprops": "^1.0.1",
-    "@storybook/addon-a11y": "^6.4.21",
-    "@storybook/addon-actions": "^6.4.21",
-    "@storybook/addon-docs": "^6.4.21",
-    "@storybook/addon-essentials": "^6.4.21",
-    "@storybook/addon-links": "^6.4.21",
-    "@storybook/html": "^6.4.21",
+    "@storybook/addon-a11y": "^6.4.22",
+    "@storybook/addon-actions": "^6.4.22",
+    "@storybook/addon-docs": "^6.4.22",
+    "@storybook/addon-essentials": "^6.4.22",
+    "@storybook/addon-links": "^6.4.22",
+    "@storybook/builder-webpack5": "^6.4.22",
+    "@storybook/html": "^6.4.22",
+    "@storybook/manager-webpack5": "^6.4.22",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/theming": "^6.4.21",
     "@types/jest": "^27.0.3",
@@ -55,11 +57,7 @@
     "jest-cli": "^27.4.5",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
-    "style-loader": "^3.3.1",
-    "webpack": "^5.72.0"
-  },
-  "overrides": {
-    "webpack": "5.72.0"
+    "style-loader": "^3.3.1"
   },
   "license": "MIT"
 }

@@ -30,13 +30,13 @@ export const parameters = {
       },
       title: 'Done',
     },
-    review: {
+    testing: {
       styles: {
         backgroundColor: '#f1841220',
         borderColor: '#f18412',
         color: '#f18412',
       },
-      title: 'In review',
+      title: 'Testing',
     }
   },
   controls: {

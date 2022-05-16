@@ -9,7 +9,7 @@ export default create({
 
   // Typography
   fontBase: 'Montserrat, sans-serif',
-  textColor: '#fff',
+  textColor: '#000',
 
   // Toolbar
   barBg: '#fff',

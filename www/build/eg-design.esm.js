@@ -1,0 +1,1 @@
+import{p as e,b as t}from"./p-a4e33a88.js";(()=>{const t=import.meta.url,a={};return""!==t&&(a.resourcesUrl=new URL(".",t).href),e(a)})().then((e=>t([["p-c25ebb55",[[1,"eg-darkmode-toggle",{label:[1],active:[1540]},[[0,"click","toggleActive"]]]]]],e)));
