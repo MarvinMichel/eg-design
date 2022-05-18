@@ -5,7 +5,15 @@ addons.setConfig({
   isToolshown: true,
   panelPosition: 'bottom',
   showPanel: true,
+  sidebar: {
+    showRoots: false,
+    collapsedRoots: ['Documentation']
+  },
   theme: endeavour,
+  toolbar: {
+    copy: { hidden: true },
+    eject: { hidden: true }
+  }
 });
 
 setTimeout(function () {

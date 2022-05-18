@@ -1,18 +1,24 @@
 module.exports = {
   addons: [
     '@storybook/addon-docs',
-    '@geometricpanda/storybook-addon-badges',
     {
       name: '@storybook/addon-essentials',
       options: {
         actions: false,
-        background: false,
+        backgrounds: false,
+        controls: true,
+        docs: true,
+        viewport: false,
+        toolbars: false,
+        measure: false,
+        outline: false,
       },
     },
     '@ljcl/storybook-addon-cssprops',
     '@storybook/addon-a11y',
     '@storybook/addon-links',
     '@storybook/preset-scss',
+    '@geometricpanda/storybook-addon-badges',
   ],
   core: {
     builder: '@storybook/builder-webpack5',
