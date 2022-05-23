@@ -6,11 +6,17 @@ import { Component, Prop, h, Listen, Host, Watch } from '@stencil/core';
   shadow: true,
 })
 export class DarkmodeToggle {
+  private startX: number;
+  private newX: number;
+
   @Prop()
-  label: string = 'Darkmode theme';
+  label = 'Darkmode theme';
 
   @Prop({ mutable: true, reflect: true })
   active: boolean;
+
+  @Prop({ reflect: true })
+  iconOnly = false;
 
   @Watch('active')
   setHTMLDataTheme(newValue: boolean) {
@@ -21,6 +27,20 @@ export class DarkmodeToggle {
   toggleActive() {
     this.active = !this.active;
     localStorage.setItem('darkmode', JSON.stringify(this.active));
+  }
+
+  @Listen('touchstart')
+  setStartCoordinate({ touches }: TouchEvent) {
+    this.startX = touches[0].clientX;
+  }
+
+  @Listen('touchmove')
+  swipeToggle({ touches }: TouchEvent) {
+    this.newX = touches[0].clientX;
+
+    if ((this.newX < this.startX && this.active) || (this.newX > this.startX && !this.active)) {
+      this.toggleActive();
+    }
   }
 
   componentWillLoad() {
@@ -37,8 +57,8 @@ export class DarkmodeToggle {
 
   render() {
     return (
-      <Host>
-        <button aria-labelledby="toggleLabel" aria-checked={`${this.active}`}>
+      <Host class={{ 'icon-only': this.iconOnly }}>
+        <button aria-labelledby="toggleLabel">
           <span class="sr-label" id="toggleLabel">
             {this.label}, {this.active ? 'on' : 'off'}
           </span>

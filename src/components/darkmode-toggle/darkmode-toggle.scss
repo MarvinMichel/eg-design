@@ -7,6 +7,22 @@
     --transition: 500ms cubic-bezier(0.6, 0.01, 0.05, 0.95);
   }
   --clr-shadow: #0e141a30;
+
+  button {
+    align-items: center;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    font: inherit;
+    padding: 0.125em;
+  }
+}
+
+:host([iconOnly=false]) {
   background: var(--clr-idle, #b7b7b7);
   border-radius: calc(var(--size, 2rem) / 1.5);
   box-shadow: 0.125em 0.125em 0.5em var(--clr-shadow);
@@ -16,48 +32,45 @@
   padding: 0.125em;
   position: relative;
   width: calc(var(--size, 2rem) * 2);
-}
 
-:host([active]) {
-  background: var(--clr-active, linear-gradient(90deg, #00b4e5, #cf10d9));
-}
+  button {
+    inset: 0;
+    position: absolute;
 
-button {
-  align-items: center;
-  appearance: none;
-  -webkit-appearance: none;
-  background-color: transparent;
-  border: 0;
-  color: inherit;
-  cursor: pointer;
-  display: flex;
-  font: inherit;
-  inset: 0;
-  padding: 0.125em;
-  position: absolute;
-
-  span#toggle {
-    background: var(--clr-toggle, #f4f4f4);
-    border-radius: 50%;
-    box-shadow: 0.125em 0 0.5em var(--clr-shadow);
-    color: inherit;
-    display: grid;
-    height: 100%;
-    padding: 12.5%;
-    place-content: center;
-    pointer-events: none;
-    position: relative;
-    transition: transform var(--transition);
-    width: 50%;
-
-    svg {
+    span#toggle {
+      background: var(--clr-toggle, #f4f4f4);
+      border-radius: 50%;
+      box-shadow: 0.125em 0 0.5em var(--clr-shadow);
+      color: inherit;
+      display: grid;
       height: 100%;
-      width: 100%;
+      padding: 12.5%;
+      place-content: center;
+      pointer-events: none;
+      position: relative;
+      transition: transform var(--transition);
+      width: 50%;
+  
+      * {
+        height: 100%;
+        width: 100%;
+      }
     }
   }
+}
 
-  &[aria-checked='true'] span#toggle {
+:host([iconOnly=false][active]) {
+  background: var(--clr-active, linear-gradient(90deg, #00b4e5, #cf10d9));
+
+  span#toggle {
     box-shadow: -0.125em 0 0.5em var(--clr-shadow);
     transform: translateX(100%);
+  }
+}
+
+:host([iconOnly=true]) {
+  --rotate: -180deg;
+  span#toggle * {
+    transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
   }
 }

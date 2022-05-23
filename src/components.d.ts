@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface EgDarkmodeToggle {
         "active": boolean;
+        "iconOnly": boolean;
         "label": string;
     }
 }
@@ -25,6 +26,7 @@ declare global {
 declare namespace LocalJSX {
     interface EgDarkmodeToggle {
         "active"?: boolean;
+        "iconOnly"?: boolean;
         "label"?: string;
     }
     interface IntrinsicElements {

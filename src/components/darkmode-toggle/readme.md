@@ -5,10 +5,11 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type      | Default            |
-| -------- | --------- | ----------- | --------- | ------------------ |
-| `active` | `active`  |             | `boolean` | `undefined`        |
-| `label`  | `label`   |             | `string`  | `'Darkmode theme'` |
+| Property   | Attribute   | Description | Type      | Default            |
+| ---------- | ----------- | ----------- | --------- | ------------------ |
+| `active`   | `active`    |             | `boolean` | `undefined`        |
+| `iconOnly` | `icon-only` |             | `boolean` | `false`            |
+| `label`    | `label`     |             | `string`  | `'Darkmode theme'` |
 
 
 ## Shadow Parts
