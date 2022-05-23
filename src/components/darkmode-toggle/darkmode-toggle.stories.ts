@@ -50,5 +50,5 @@ export default {
   title: 'Components/Darkmode Toggle',
 };
 
-const DefaultTemplate = ({ iconOnly, label }) => `<eg-darkmode-toggle label="${label}" iconOnly="${iconOnly}" />`;
+const DefaultTemplate = ({ iconOnly, label }) => `<eg-darkmode-toggle label="${label}" ${iconOnly && 'class="iconOnly"'} />`;
 export const basic = DefaultTemplate.bind({});
