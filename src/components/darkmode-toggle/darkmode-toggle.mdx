@@ -1,11 +1,11 @@
 import { Canvas, Description, Props, Story } from '@storybook/addon-docs';
-import * as stories from './darkmode-toggle.stories.ts';
 
 # Darkmode Toggle
 
 <Description>A switch button which chages the darkmode state of the HTML document.</Description>
+
 <Canvas withToolbar>
-  <Story id="components-darkmode-toggle--basic" inline={false} />
+  <Story id="components-darkmode-toggle--basic" name="primary" inline={false} args={{ iconOnly: false, label: 'darkmode theme' }} />
 </Canvas>
 
 ## How it works
@@ -33,19 +33,31 @@ The foremost reason why this component is accessible, is because we use HTML5 na
 
 #### State
 
-The most important thing of a toggle button, is comunicating the on/off state to the user. Normally people tend to create toggles or switch buttons with checkboxes or radio buttons. This isn't necessarily wrong, but it leaves screen reader users with questions around the functionality of the toggle which can confuse the user. Screen reader users may associate checkboxes with a handling of.
+The most important thing of a toggle button, is comunicating the on/off state to the user. Normally people tend to create toggles or switch buttons with checkboxes or radio buttons. This isn't necessarily wrong, but it leaves screen reader users with questions around the functionality of the toggle which can confuse the user. Screen reader users may associate checkboxes with a handling of data.
+
+```html
+<input type="checkbox" name="toggle" />
+```
+
+###### Result
 
 <Story id="hidden-darkmode-toggle--checkbox" inline={false} />
 
-```html
-<input type="checkbox" name="toggle">
-```
-
 A darkmode toggle in this case, doesn't have anything to do with handling data or forms. It's just an interactive button that changes the state of the app. Kind of like a setting or a menu button. That's why the most appropriate HTML element is the `<button>`, since it handles the semantics out-of-the-box for us.
 
-But we still haven't communicated the on/off state of the button to the user. We could simply use the `role=switch` attribute in combination with `aria-checked`. Most screen readers will inform the user in this case that this button is a switch with an on or off state. Though it's not consistent troughout different screen readers. Besides, screen reader users tend to navigate trough elements since they lack a complete vision of layout. They use shortcuts to navigate trough different UI elements. But on the time of writing, JAWS2022 recognizes elements with `role=switch` as checkboxes instead of buttons. This may confuse the user, as they search for a button but never find it trough the corresponding shortcut.
+But we still haven't communicated the on/off state of the button to the user. We could simply use the `role=switch` attribute in combination with `aria-checked`:
+```html
+<button role="switch" aria-checked="false">darkmode theme</button>
+```
+Most screen readers will inform the user in this case that this button is a switch with an on or off state, although it's not consistent troughout different screen readers. Besides, screen reader users tend to navigate trough elements since they lack a complete vision of layout. They use shortcuts to navigate trough different UI elements. But on the time of writing, JAWS2022 recognizes elements with `role=switch` as checkboxes instead of buttons. This may confuse the user, as they search for a button but never find it trough the corresponding shortcut.
 
 That's why we simply use a native button with an auxiliary label. The label simply calls the state on or off, based on the components `active` state. Using this method we allow the component to communicate the state to the user without confusing them of the functionality as well as preserving the screen reader shortcuts that they expect to come with the component.
+```html
+<span class="sr-label" id="toggleLabel">
+  {this.label}, {this.active ? 'on' : 'off'}
+</span>
+```
+> ⚠️ Note that we used a comma to seperate the label and state. This is for punctuation of the screen reader, to make it more understandable to the user.
 
 #### Label
 

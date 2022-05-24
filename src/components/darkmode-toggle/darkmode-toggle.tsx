@@ -57,7 +57,7 @@ export class DarkmodeToggle {
 
   render() {
     return (
-      <Host class={{ 'icon-only': this.iconOnly }}>
+      <Host>
         <button aria-labelledby="toggleLabel">
           <span class="sr-label" id="toggleLabel">
             {this.label}, {this.active ? 'on' : 'off'}

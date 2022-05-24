@@ -22,7 +22,7 @@
   }
 }
 
-:host(:not(.iconOnly)) {
+:host(:not([iconOnly])) {
   background: var(--clr-idle, #b7b7b7);
   border-radius: calc(var(--size, 2rem) / 1.5);
   box-shadow: 0.125em 0.125em 0.5em var(--clr-shadow);
@@ -50,7 +50,7 @@
       position: relative;
       transition: transform var(--transition);
       width: 50%;
-  
+
       * {
         height: 100%;
         width: 100%;
@@ -59,7 +59,7 @@
   }
 }
 
-:host(:not(.iconOnly)[active]) {
+:host(:not([iconOnly])[active]) {
   background: var(--clr-active, linear-gradient(90deg, #00b4e5, #cf10d9));
 
   span#toggle {
@@ -68,7 +68,7 @@
   }
 }
 
-:host(.iconOnly) {
+:host([iconOnly]) {
   --rotate: -180deg;
   span#toggle * {
     transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;

@@ -26,18 +26,22 @@ export default {
       'clr-idle': {
         value: '#b7b7b7',
         description: 'Background color of switch in idle state',
+        control: 'color',
       },
       'clr-active': {
         value: 'linear-gradient(90deg, #00b4e5, #cf10d9)',
         description: 'Background color of switch in active state',
+        control: 'color',
       },
       'clr-toggle': {
         value: '#f4f4f4',
         description: 'Background color of toggle knob',
+        control: 'color',
       },
       'clr-icon': {
         value: '#525252',
         description: 'Color of the icon inside the toggle knob',
+        control: 'color',
       },
       'size': {
         value: '2rem',
@@ -50,5 +54,5 @@ export default {
   title: 'Components/Darkmode Toggle',
 };
 
-const DefaultTemplate = ({ iconOnly, label }) => `<eg-darkmode-toggle label="${label}" ${iconOnly && 'class="iconOnly"'} />`;
+const DefaultTemplate = ({ iconOnly, label }) => `<eg-darkmode-toggle label="${label}" ${!!iconOnly ? 'iconOnly' : ''} />`;
 export const basic = DefaultTemplate.bind({});
