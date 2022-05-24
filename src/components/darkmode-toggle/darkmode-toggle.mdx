@@ -15,7 +15,7 @@ By adding a `data-darkmode` attribute onto the `<html>`, setting it to `light` o
 > ⚠️ To get the style changes working you'll need to implement a darkmode theme version inside of your global stylesheet:
 
 ```css
-/* global.css  */
+/* global.(s)css  */
 
 :root {
   --clr-text: black;
@@ -52,7 +52,7 @@ But we still haven't communicated the on/off state of the button to the user. We
 Most screen readers will inform the user in this case that this button is a switch with an on or off state, although it's not consistent troughout different screen readers. Besides, screen reader users tend to navigate trough elements since they lack a complete vision of layout. They use shortcuts to navigate trough different UI elements. But on the time of writing, JAWS2022 recognizes elements with `role=switch` as checkboxes instead of buttons. This may confuse the user, as they search for a button but never find it trough the corresponding shortcut.
 
 That's why we simply use a native button with an auxiliary label. The label simply calls the state on or off, based on the components `active` state. Using this method we allow the component to communicate the state to the user without confusing them of the functionality as well as preserving the screen reader shortcuts that they expect to come with the component.
-```html
+```jsx
 <span class="sr-label" id="toggleLabel">
   {this.label}, {this.active ? 'on' : 'off'}
 </span>
@@ -61,7 +61,7 @@ That's why we simply use a native button with an auxiliary label. The label simp
 
 #### Label
 
-With an instructive label, we can communicate with the user what the call-to-action will be. Normally we would use a verb for this, since it is something the button does. But in our case of the darkmode toggle, we want to turn someting on or off. So the label in this case must refer to the setting we're toggling: the darkmode theme. That's why the label of the component has a default value of `darkmode theme`. The label is placed inside a `<span>` and functions as a label trough the `labbeledby={id}` of the component. This is done, so that we can hide the text visually without hiding other child elements like the icons. Using `labbeldby` is a better way than using `label`, since we can translate the `<span>` element to support multiple languages in the app and thus we make it more inclusive.
+With an instructive label, we can communicate with the user what the call-to-action will be. Normally we would use a verb for this, since it is something the button does. But in our case of the darkmode toggle, we want to turn someting on or off. So the label in this case must refer to the setting we're toggling: the darkmode theme. That's why the label of the component has a default value of `darkmode theme`. The label is placed inside a `<span>` and functions as a label trough the `labbeledby="toggleLabel"` of the component. This is done, so that we can hide the text visually without hiding other child elements like the icons. Using `labbeldby` is a better way than using `label`, since we can translate the `<span>` element to support multiple languages in the app trough internationalization and thus we make it more inclusive.
 
 #### Icon
 
