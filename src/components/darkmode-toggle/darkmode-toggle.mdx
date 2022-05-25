@@ -1,4 +1,4 @@
-import { Canvas, Description, Props, Story } from '@storybook/addon-docs';
+import { ArgsTable, Canvas, Description, Props, Story } from '@storybook/addon-docs';
 
 # Darkmode Toggle
 
@@ -8,12 +8,13 @@ import { Canvas, Description, Props, Story } from '@storybook/addon-docs';
   <Story id="components-darkmode-toggle--basic" name="primary" inline={false} args={{ iconOnly: false, label: 'darkmode theme' }} />
 </Canvas>
 
+<ArgsTable of="eg-darkmode-toggle" />
+
 ## How it works
 
-By adding a `data-darkmode` attribute onto the `<html>`, setting it to `light` or `dark`, the application can change it's theme. It uses a media-query to get the users' system default and uses it on render. If the user has changed the theme, it's saved to the localStorage. The latter get priority above everything.
+By adding a `data-darkmode` attribute onto the `<html>`, setting it to `light` or `dark`, the application can change it's theme. It uses a media-query to get the users' system default and uses it on render. If the user has changed the theme, it's saved to the localStorage. The latter gets priority above everything.
 
-> ⚠️ To get the style changes working you'll need to implement a darkmode theme version inside of your global stylesheet:
-
+It does require a small setup of styling, leaving it up to your own preferences. To get it working, simply add your own custom styling for dark- and lightmode by refering to the `data-theme` selector:
 ```css
 /* global.(s)css  */
 
@@ -73,7 +74,7 @@ Pretty much anything is customizable to make the component suitable for any kind
 
 ### Icons
 
-To get a wider browser support, the icons that the button uses are HTML unicodes. They are fully customizable though! By simply adding any element as a child it can serve as an icon if it has the correct slot names. With the `iconIdle` and `iconActive` you can use your own icon of choice:
+By simply adding any element as a child it can serve as an icon if it has the correct slot name. With the `iconIdle` and `iconActive` you can use your own icon of choice:
 
 <Canvas>
   <Story id="hidden-darkmode-toggle--with-icon" inline={false} />
