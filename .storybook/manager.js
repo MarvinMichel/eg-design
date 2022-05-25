@@ -4,7 +4,7 @@ import endeavour from './eg-theme';
 addons.setConfig({
   isToolshown: true,
   panelPosition: 'bottom',
-  showPanel: true,
+  showPanel: false,
   sidebar: {
     showRoots: false,
     collapsedRoots: ['Documentation']

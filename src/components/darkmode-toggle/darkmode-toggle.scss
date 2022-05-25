@@ -6,6 +6,13 @@
   @media (prefers-reduced-motion: no-preference) {
     --transition: 500ms cubic-bezier(0.6, 0.01, 0.05, 0.95);
   }
+  /**
+  * @prop --clr-active: Background-color of the toggle on active state
+  * @prop --clr-icon: Color of the icon inside the toggle
+  * @prop --clr-idle: Background-color of the toggle on idle state
+  * @prop --clr-knob: Background-color of the knob
+  * @prop --clr-shadow: Color of the shadow used by the toggle and it's knob
+  */
   --clr-shadow: #0e141a30;
 
   button {
@@ -37,8 +44,8 @@
     inset: 0;
     position: absolute;
 
-    span#toggle {
-      background: var(--clr-toggle, #f4f4f4);
+    span#knob {
+      background: var(--clr-knob, #f4f4f4);
       border-radius: 50%;
       box-shadow: 0.125em 0 0.5em var(--clr-shadow);
       color: inherit;
@@ -62,7 +69,7 @@
 :host(:not([iconOnly])[active]) {
   background: var(--clr-active, linear-gradient(90deg, #00b4e5, #cf10d9));
 
-  span#toggle {
+  span#knob {
     box-shadow: -0.125em 0 0.5em var(--clr-shadow);
     transform: translateX(100%);
   }
@@ -70,7 +77,7 @@
 
 :host([iconOnly]) {
   --rotate: -180deg;
-  span#toggle * {
+  span#knob * {
     transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
   }
 }

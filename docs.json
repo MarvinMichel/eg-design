@@ -1,0 +1,127 @@
+{
+  "timestamp": "2022-05-25T08:46:48",
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "2.15.0",
+    "typescriptVersion": "4.5.4"
+  },
+  "components": [
+    {
+      "filePath": "./src/components/darkmode-toggle/darkmode-toggle.tsx",
+      "encapsulation": "shadow",
+      "tag": "eg-darkmode-toggle",
+      "readme": "# eg-darkmode-toggle\n\nA switch button which chages the darkmode state of the HTML document.\n",
+      "docs": "A switch button which chages the darkmode state of the HTML document.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "active",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "active",
+          "reflectToAttr": true,
+          "docs": "The state of the toggle button",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "iconOnly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "icon-only",
+          "reflectToAttr": true,
+          "docs": "Only use an icon as the component instead of a toggle",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "The label that's been read by screen readers",
+          "docsTags": [],
+          "default": "'darkmode theme'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [
+        {
+          "event": "click",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "touchstart",
+          "capture": false,
+          "passive": true
+        },
+        {
+          "event": "touchmove",
+          "capture": false,
+          "passive": true
+        }
+      ],
+      "styles": [
+        {
+          "name": "--clr-active",
+          "annotation": "prop",
+          "docs": "Background-color of the toggle on active state"
+        },
+        {
+          "name": "--clr-icon",
+          "annotation": "prop",
+          "docs": "Color of the icon inside the toggle"
+        },
+        {
+          "name": "--clr-idle",
+          "annotation": "prop",
+          "docs": "Background-color of the toggle on idle state"
+        },
+        {
+          "name": "--clr-knob",
+          "annotation": "prop",
+          "docs": "Background-color of the knob"
+        },
+        {
+          "name": "--clr-shadow",
+          "annotation": "prop",
+          "docs": "Color of the shadow used by the toggle and it's knob"
+        }
+      ],
+      "slots": [],
+      "parts": [
+        {
+          "name": "knob",
+          "docs": ""
+        }
+      ],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    }
+  ]
+}

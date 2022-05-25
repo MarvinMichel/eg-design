@@ -1,5 +1,10 @@
 import { defineCustomElements } from '../loader';
+import { setStencilDocJson } from '@pxtrn/storybook-addon-docs-stencil';
+import { extractArgTypesFactory } from '@pxtrn/storybook-addon-docs-stencil';
+import docJson from '../docs.json';
 import '../dist/eg-design/eg-design.css';
+
+if (docJson) setStencilDocJson(docJson);
 
 defineCustomElements();
 
@@ -37,13 +42,17 @@ export const parameters = {
         color: '#f18412',
       },
       title: 'Testing',
-    }
+    },
   },
   controls: {
+    controls: { hideNoControlsWarning: true },
     matchers: {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+  },
+  docs: {
+    extractArgTypes: extractArgTypesFactory({ dashCase: true }),
   },
   layout: 'centered',
 };

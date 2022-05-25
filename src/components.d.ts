@@ -7,8 +7,17 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface EgDarkmodeToggle {
+        /**
+          * The state of the toggle button
+         */
         "active": boolean;
+        /**
+          * Only use an icon as the component instead of a toggle
+         */
         "iconOnly": boolean;
+        /**
+          * The label that's been read by screen readers
+         */
         "label": string;
     }
 }
@@ -25,8 +34,17 @@ declare global {
 }
 declare namespace LocalJSX {
     interface EgDarkmodeToggle {
+        /**
+          * The state of the toggle button
+         */
         "active"?: boolean;
+        /**
+          * Only use an icon as the component instead of a toggle
+         */
         "iconOnly"?: boolean;
+        /**
+          * The label that's been read by screen readers
+         */
         "label"?: string;
     }
     interface IntrinsicElements {

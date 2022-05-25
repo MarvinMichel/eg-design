@@ -19,6 +19,7 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/preset-scss',
     '@geometricpanda/storybook-addon-badges',
+    '@pxtrn/storybook-addon-docs-stencil',
   ],
   core: {
     builder: '@storybook/builder-webpack5',

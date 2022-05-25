@@ -9,12 +9,21 @@ export class DarkmodeToggle {
   private startX: number;
   private newX: number;
 
+  /**
+   * The label that's been read by screen readers
+   */
   @Prop()
-  label = 'Darkmode theme';
+  label = 'darkmode theme';
 
+  /**
+   * The state of the toggle button
+   */
   @Prop({ mutable: true, reflect: true })
   active: boolean;
 
+  /**
+   * Only use an icon as the component instead of a toggle
+   */
   @Prop({ reflect: true })
   iconOnly = false;
 
@@ -62,7 +71,7 @@ export class DarkmodeToggle {
           <span class="sr-label" id="toggleLabel">
             {this.label}, {this.active ? 'on' : 'off'}
           </span>
-          <span id="toggle" part="toggle" aria-hidden="true">
+          <span id="knob" part="knob" aria-hidden="true">
             {!this.active ? (
               <slot key="a" name="iconIdle">
                 <svg

@@ -33,7 +33,7 @@ export default {
         description: 'Background color of switch in active state',
         control: 'color',
       },
-      'clr-toggle': {
+      'clr-knob': {
         value: '#f4f4f4',
         description: 'Background color of toggle knob',
         control: 'color',
