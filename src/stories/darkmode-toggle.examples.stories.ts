@@ -9,6 +9,9 @@ export default {
   },
   component: 'eg-darkmode-toggle',
   description: 'Darkmode toggle examles for documentation',
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   title: 'hidden_darkmode-toggle',
 };
 
