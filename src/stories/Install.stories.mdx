@@ -7,7 +7,14 @@ import { linkTo } from '@storybook/addon-links';
 
 Use npm to install the component library into your project:
 ```bash
-npm install @eg-design
+npm i @eg-design
+```
+
+Then make sure you are able to use custom elements in your project. With plain Javascript that's as easy as importing the loader function:
+```js
+import { defineCustomElements } from '@eg-design/loader';
+
+defineCustomElements();
 ```
 
 <div class="button-container">
