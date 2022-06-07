@@ -24,9 +24,21 @@
     font-size: 0.75rem !important;
   }
 
-  .sidebar-item[data-nodetype=group] {
+  .sidebar-item[data-nodetype='group'] {
     font-weight: 800 !important;
     margin-top: 1em !important;
+  }
+
+  .sidebar-item svg[color='primary'] {
+    display: none !important;
+  }
+
+  .sidebar-item svg {
+    margin-top: 1px !important;
+  }
+
+  .sidebar-item span {
+    margin-top: 4px !important;
   }
 
   button[title='Shortcuts'] {
@@ -68,11 +80,6 @@
 
   [id^='hidden-'] {
     display: none !important;
-  }
-
-  #panel-tab-content {
-    background: url(/images/pattern-light@3x.png) no-repeat #f9f9f9 right 10px;
-    background-size: contain;
   }
 
   .css-1551xjo {

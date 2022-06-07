@@ -1,0 +1,37 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { linkTo } from '@storybook/addon-links';
+
+<Meta title="Documentation/What are semantics?" />
+
+# What are semantics?
+
+Semantics is the science of adding a value of spoken text to a symbol or element. In Front-end Development this refers to a text value of an HTML element or attribute, that gives screenreaders additional information about the element. In other words: <i>the meaning of the code.</i> This is a very misunderstanded subject, since it can be very arbitrary. The right element for the component is dependant on the role of the component in a user interface.
+
+The first mistake that most developers make, is confusing the role (meaning a functionality) with the look of the component. For example: a button and a link may look the same in many cases:
+
+<Story id="hidden-docs--button-and-link" inline={false} />
+
+But both elements have very different functionalities and thus roles within the application. A button activates an interaction and may change something like a setting. But a link will move the user to a different page and change the content on the screen. For most users this won't be a problem, since there are many ways to inform a user of the functionalities by visual stimulances. But for screenreader users this is a huge problem. Giving the wrong context or contradicting information can confuse the user and thus decrease the user experience immensly.
+
+## How to choose the right element?
+
+Choosing the right element for your component can be challenging, but there are ways to make it easier for yourself.
+
+#### HTML5 elements
+
+To make sure an element has semantics values, you should always look for a native HTML5 element as the outer element. You can check al the HTML5 elements [here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element). These elements come with certain semantic values out-of-the-box and are always a better choice than `<div>` or `<span>` elements. When checking for HTML5 elements, be sure to ask yourself: 'What does this component do?'. Forget about how it looks, just focus on the functionality.
+
+#### Validate the correct element
+
+For developers, it can be challenging to dive into semantics. To validate what works and what doesn't, we need usability testing with screenreader users. To test a component without giving any details, just a set of tasks they need to complete with the component and see what the results are. What does the user expect when hearing the description of the screenreader? Is it explanatory or confusing?
+
+#### Don't overwork the dough
+
+It's important to recognize what is valuable information and what isn't. Blindly adding elements or aria attributes rarely result in a better user experience for screenreader users. Being a developer means you are able to break down an app or website into different smaller sets of functionalities. Break down your component and filter what is neccesary. The best way to do this, is using the component for a while and think of every visual hint you are given. That's the only information you need to translate to the screenreader.
+
+<div class="button-container">
+  <button class="previous" onClick={linkTo('documentation-how-to-install--page')}>
+    Previous
+    <span>How to install?</span>
+  </button>
+</div>

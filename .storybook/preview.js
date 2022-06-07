@@ -55,4 +55,13 @@ export const parameters = {
     extractArgTypes: extractArgTypesFactory({ dashCase: true }),
   },
   layout: 'centered',
+  options: {
+    storySort: {
+      order: [
+        'Documentation',
+        ['Introduction', 'How to install?', 'What are semantics?'],
+        'Components'
+      ]
+    }
+  }
 };
