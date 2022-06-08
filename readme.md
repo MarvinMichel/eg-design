@@ -14,3 +14,8 @@ To make sure Endeavour's components can be used in your project, we've made the 
 
 ## Learning tool
 Endeavour Design is focused on development of developers. While developing and testing the components with screen reader users, we often gain new insights about accessibility. The documentation is a centered place where we share these insights and share our knowledge. This way, we try to improve our stake on the accessibilty of the web we create.
+
+## Contribute
+Read upon [Stencil](https://stenciljs.com/docs/introduction) and [Storybook](https://storybook.js.org/docs/html/get-started/introduction) before starting ate this project.
+
+Check the [docs](./CONTRIBUTING.MD) for details about component configuration.
