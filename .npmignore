@@ -1,20 +1,36 @@
+._*
 *~
 *.sw[mnpcod]
 *.log
 *.lock
+.lock-wscript
 *.tmp
 *.tmp.*
 log.txt
 *.sublime-project
 *.sublime-workspace
 
+.editorconfig
+.hg
+.git
+.gitignore
+.npmignore
+.npmrc
+.svn
+.wafpickle-*
+config.gypi
+CVS
+
 .stencil/
 .idea/
+.github/
 .vscode/
 .sass-cache/
 .versions/
+.storybook/
+storybook-static/
+static/
 node_modules/
-storybook-static
 $RECYCLE.BIN/
 
 .DS_Store

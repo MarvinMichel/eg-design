@@ -1,0 +1,13 @@
+.stencil/
+.idea/
+.vscode/
+.sass-cache/
+.versions/
+node_modules/
+dist/
+loader/
+storybook-static/
+www/
+
+docs.d.ts
+docs.json
