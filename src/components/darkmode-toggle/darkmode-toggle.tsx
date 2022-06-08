@@ -16,35 +16,35 @@ export class DarkmodeToggle {
   label = 'darkmode theme';
 
   /**
-   * The state of the toggle button
+   * The current state of the toggle button
    */
   @Prop({ mutable: true, reflect: true })
   active: boolean;
 
   /**
-   * Only use an icon as the component instead of a toggle
+   * Only use an icon as the component instead of a toggle button
    */
   @Prop({ reflect: true })
   iconOnly = false;
 
   @Watch('active')
-  setHTMLDataTheme(newValue: boolean) {
+  setHTMLDataTheme(newValue: boolean): void {
     document.documentElement.setAttribute('data-theme', newValue ? 'dark' : 'light');
   }
 
   @Listen('click')
-  toggleActive() {
+  toggleActive(): void {
     this.active = !this.active;
     localStorage.setItem('darkmode', JSON.stringify(this.active));
   }
 
   @Listen('touchstart')
-  setStartCoordinate({ touches }: TouchEvent) {
+  setStartCoordinate({ touches }: TouchEvent): void {
     this.startX = touches[0].clientX;
   }
 
   @Listen('touchmove')
-  swipeToggle({ touches }: TouchEvent) {
+  swipeToggle({ touches }: TouchEvent): void {
     this.newX = touches[0].clientX;
 
     if ((this.newX < this.startX && this.active) || (this.newX > this.startX && !this.active)) {
@@ -52,7 +52,7 @@ export class DarkmodeToggle {
     }
   }
 
-  componentWillLoad() {
+  componentWillLoad(): void {
     const savedTheme = localStorage.getItem('darkmode');
     const prefersDarkmode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -64,7 +64,7 @@ export class DarkmodeToggle {
     this.active = prefersDarkmode;
   }
 
-  render() {
+  render(): DarkmodeToggle {
     return (
       <Host>
         <button aria-labelledby="toggleLabel">

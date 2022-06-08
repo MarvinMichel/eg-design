@@ -26,8 +26,7 @@
     "generate": "stencil generate",
     "dev": "stencil build --docs --watch & start-storybook -p 6006",
     "storybook-docs": "start-storybook --docs --no-manager-cache",
-    "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic --project-token=e92c908b6ab8"
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@stencil/core": "2.15.0",
@@ -56,6 +55,7 @@
     "html-webpack-plugin": "^5.5.0",
     "jest": "^27.4.5",
     "jest-cli": "^27.4.5",
+    "puppeteer": "^10.0.0",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1"

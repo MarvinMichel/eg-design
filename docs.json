@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-06-08T08:46:53",
+  "timestamp": "2022-06-08T11:26:52",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.15.0",
@@ -21,7 +21,7 @@
           "mutable": true,
           "attr": "active",
           "reflectToAttr": true,
-          "docs": "The state of the toggle button",
+          "docs": "The current state of the toggle button",
           "docsTags": [],
           "values": [
             {
@@ -37,7 +37,7 @@
           "mutable": false,
           "attr": "icon-only",
           "reflectToAttr": true,
-          "docs": "Only use an icon as the component instead of a toggle",
+          "docs": "Only use an icon as the component instead of a toggle button",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -85,33 +85,7 @@
           "passive": true
         }
       ],
-      "styles": [
-        {
-          "name": "--clr-active",
-          "annotation": "prop",
-          "docs": "Background-color of the toggle on active state"
-        },
-        {
-          "name": "--clr-icon",
-          "annotation": "prop",
-          "docs": "Color of the icon inside the toggle"
-        },
-        {
-          "name": "--clr-idle",
-          "annotation": "prop",
-          "docs": "Background-color of the toggle on idle state"
-        },
-        {
-          "name": "--clr-knob",
-          "annotation": "prop",
-          "docs": "Background-color of the knob"
-        },
-        {
-          "name": "--clr-shadow",
-          "annotation": "prop",
-          "docs": "Color of the shadow used by the toggle and it's knob"
-        }
-      ],
+      "styles": [],
       "slots": [],
       "parts": [
         {
