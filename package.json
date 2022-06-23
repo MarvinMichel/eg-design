@@ -47,7 +47,7 @@
     "@storybook/manager-webpack5": "^6.5.7",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/theming": "^6.5.7",
-    "@types/jest": "^27.0.3",
+    "@types/jest": "^27.5.2",
     "@types/node": "^17.0.23",
     "babel-loader": "^8.2.4",
     "chromatic": "^6.5.4",

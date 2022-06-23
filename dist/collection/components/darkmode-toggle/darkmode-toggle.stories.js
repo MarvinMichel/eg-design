@@ -19,7 +19,7 @@ export default {
   component: 'eg-darkmode-toggle',
   description: "The darkmode toggle is a switch button which chages the darkmode state of the HTML document, by adding a `data-darkmode` attribute onto the `<html>`. It uses a media-query to get the users' system default and uses it on render. If the user has changed the theme, it's saved to the localStorage. The latter get priority above everything.",
   parameters: {
-    badges: ['development', 'testing'],
+    badges: ['testing'],
     cssprops: {
       'clr-idle': {
         value: '#b7b7b7',

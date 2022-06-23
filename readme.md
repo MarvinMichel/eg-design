@@ -19,3 +19,19 @@ Endeavour Design is focused on development of developers. While developing and t
 Read upon [Stencil](https://stenciljs.com/docs/introduction) and [Storybook](https://storybook.js.org/docs/html/get-started/introduction) before starting ate this project.
 
 Check the [docs](./CONTRIBUTING.MD) for details about component configuration.
+
+## Get started
+Install the dependencies of the project.
+```bash
+npm install
+```
+
+To run the development environment, run:
+```bash
+npm run dev
+```
+
+To build the components for production, run:
+```bash
+npm run build
+```

@@ -21,6 +21,17 @@ A switch button which chages the darkmode state of the HTML document.
 | `"knob"` |             |
 
 
+## CSS Custom Properties
+
+| Name           | Description                                          |
+| -------------- | ---------------------------------------------------- |
+| `--clr-active` | Background-color of the toggle on active state       |
+| `--clr-icon`   | Color of the icon inside the toggle                  |
+| `--clr-idle`   | Background-color of the toggle on idle state         |
+| `--clr-knob`   | Background-color of the knob                         |
+| `--clr-shadow` | Color of the shadow used by the toggle and it's knob |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
