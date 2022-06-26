@@ -12,7 +12,7 @@
   "unpkg": "dist/eg-design/eg-design.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "https://github.com/MarvinMichel/eg-design.git"
   },
   "files": [
     "dist/",
