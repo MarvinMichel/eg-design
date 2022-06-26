@@ -5,7 +5,9 @@
 
 A component driven answer to inclusivity and usabillity of accesabillity.
 
-Endeavour Design is a UI component library focused to bringing refined experiences to visually impaired users, while maintaining endless styling possibilities. 
+Endeavour Design is a UI component library focused to bringing refined experiences to visually impaired users, while maintaining endless styling possibilities.
+
+> ⚠️ This project is made for my bachelor thesis and is not production ready or maintained actively.
 
 ## Made for all
 The components are styled pretty basicly, but are usable out-of-the-box nonetheless. Every style can be overwritten to match you own style-guide. Check the components' specific documentation to see what can be styled, or check it's [live demo]().
