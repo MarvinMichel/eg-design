@@ -9,19 +9,6 @@ Endeavour Design is a UI component library focused to bringing refined experienc
 
 > ⚠️ This project is made for my bachelor thesis and is not production ready or maintained actively.
 
-## Made for all
-The components are styled pretty basicly, but are usable out-of-the-box nonetheless. Every style can be overwritten to match you own style-guide. Check the components' specific documentation to see what can be styled, or check it's [live demo]().
-
-To make sure Endeavour's components can be used in your project, we've made the component using [Stencil](https://stenciljs.com/). The components are easy to read, object based Web Components compatible with every framework or none at all.
-
-## Learning tool
-Endeavour Design is focused on development of developers. While developing and testing the components with screen reader users, we often gain new insights about accessibility. The documentation is a centered place where we share these insights and share our knowledge. This way, we try to improve our stake on the accessibilty of the web we create.
-
-## Contribute
-Read upon [Stencil](https://stenciljs.com/docs/introduction) and [Storybook](https://storybook.js.org/docs/html/get-started/introduction) before starting ate this project.
-
-Check the [docs](./CONTRIBUTING.MD) for details about component configuration.
-
 ## Get started
 Install the dependencies of the project.
 ```bash
@@ -37,3 +24,16 @@ To build the components for production, run:
 ```bash
 npm run build
 ```
+
+## Made for all
+The components are styled pretty basicly, but are usable out-of-the-box nonetheless. Every style can be overwritten to match you own style-guide. Check the components' specific documentation to see what can be styled, or check it's [live demo]().
+
+To make sure Endeavour's components can be used in your project, we've made the component using [Stencil](https://stenciljs.com/). The components are easy to read, object based Web Components compatible with every framework or none at all.
+
+## Learning tool
+Endeavour Design is focused on development of developers. While developing and testing the components with screen reader users, we often gain new insights about accessibility. The documentation is a centered place where we share these insights and share our knowledge. This way, we try to improve our stake on the accessibilty of the web we create.
+
+## Contribute
+Read upon [Stencil](https://stenciljs.com/docs/introduction) and [Storybook](https://storybook.js.org/docs/html/get-started/introduction) before starting ate this project.
+
+Check the [docs](./CONTRIBUTING.MD) for details about component configuration.
